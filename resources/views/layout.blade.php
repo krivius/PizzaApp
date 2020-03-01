@@ -16,13 +16,13 @@
         <div id="header-wrapper">
             <div id="header" class="container">
                 <div id="logo">
-                    <h1><a href="#">Colore Giallo</a></h1>
+                    <h1><a href="#"><img src="images/PizzaExpressLogo.png"></a></h1>
                 </div>
                 <div id="menu">
                     <ul>
                         <li class="current_page_item"><a href="#">Menu</a></li>
                         <li><a href="#">Special offers</a></li>
-                        <li><a href="#">Login</a></li>
+{{--                        <li><a href="#">Login</a></li>--}}
                         <li><a href="#">Cart</a></li>
                     </ul>
                 </div>

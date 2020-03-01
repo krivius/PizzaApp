@@ -119,6 +119,11 @@ a:hover {
 	color: #12212F;
 }
 
+#logo a img{
+    height: 150px;
+}
+
+
 /* Splash */
 
 #splash {
@@ -573,4 +578,14 @@ ul.style1 .first {
 	color: #FFFFFF;
 	text-align: center;
 	text-decoration: none;
+}
+
+
+.bounce { animation: bounce 1s; }
+
+@keyframes bounce {
+    0% { transform: rotate(  0deg) scale(1.0); }
+    33% { transform: rotate( 12deg) scale(1.2); }
+    67% { transform: rotate(-12deg) scale(0.8); }
+    100% { transform: rotate(  0deg) scale(1.0); }
 }
