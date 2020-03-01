@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>My Pizza App</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Abel|Satisfy' rel='stylesheet' type='text/css' />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="shortcun icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                <div id="logo">
+                    <h1><a href="#">Colore Giallo</a></h1>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li class="current_page_item"><a href="#">Menu</a></li>
+                        <li><a href="#">Special offers</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Cart</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--div id="banner">
+                <div class="content"><img src="images/img02.jpg" width="1000" height="400" alt="" /></div>
+            </div-->
+        </div>
+
+
+        @yield('content')
+
+
+        <div id="footer-content-wrapper">
+            <div id="footer-content">
+                <div id="fbox1">
+                    <h2>Fusce ultrices fringilla</h2>
+                    <ul class="style1">
+                        <li class="first"><a href="#">Maecenas luctus lectus at sapien</a></li>
+                        <li><a href="#">Etiam rhoncus volutpat erat</a></li>
+                    </ul>
+                </div>
+                <div id="fbox2">
+                    <h2>Nulla luctus eleifend</h2>
+                    <ul class="style1">
+                        <li class="first"><a href="#">Maecenas luctus lectus at sapien</a></li>
+                        <li><a href="#">Etiam rhoncus volutpat erat</a></li>
+                    </ul>
+                </div>
+                <div id="fbox3">
+                    <h2>Maecenas luctus lectus</h2>
+                    <ul class="style1">
+                        <li class="first"><a href="#">Maecenas luctus lectus at sapien</a></li>
+                        <li><a href="#">Etiam rhoncus volutpat erat</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <p>&copy; Untitled. All rights reserved. Images by <a href="http://fotogrph.com/">Fotogrph</a>. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+        </div>
+
+    </div>
+</body>
+</html>

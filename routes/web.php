@@ -15,11 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/cart', function () {
-    $name = request('name');
-    return view('cart', [
-        'name'=> $name
-    ]);
+    return view('cart');
 });
 
 /*
