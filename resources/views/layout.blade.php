@@ -8,28 +8,30 @@
     <title>My Pizza App</title>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Abel|Satisfy' rel='stylesheet' type='text/css' />
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="screen" />
     <link rel="shortcun icon" href="favicon.ico" type="image/x-icon">
+
+
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 </head>
 <body>
+
     <div id="wrapper">
         <div id="header-wrapper">
             <div id="header" class="container">
                 <div id="logo">
-                    <h1><a href="#"><img src="images/PizzaExpressLogo.png"></a></h1>
+                    <h1><a href="#"><img src="/images/PizzaExpressLogo.png"></a></h1>
                 </div>
                 <div id="menu">
                     <ul>
-                        <li class="current_page_item"><a href="#">Menu</a></li>
-                        <li><a href="#">Special offers</a></li>
-{{--                        <li><a href="#">Login</a></li>--}}
-                        <li><a href="#">Cart</a></li>
+                        <li class="{{ Request::path() === '/' ? 'current_page_item' : '' }} "><a href="/">Menu</a></li>
+                        <li  class="{{ Request::path() === 'special-offers' ? 'current_page_item' : '' }} "><a href="/special-offers">Special offers</a></li>
+                        <li  class="{{ Request::path() === 'cart' ? 'current_page_item' : '' }} "><a href="/cart">Cart</a></li>
                     </ul>
                 </div>
             </div>
-            <!--div id="banner">
-                <div class="content"><img src="images/img02.jpg" width="1000" height="400" alt="" /></div>
-            </div-->
         </div>
 
 
@@ -64,7 +66,11 @@
         <div id="footer">
             <p>&copy; Untitled. All rights reserved. Images by <a href="http://fotogrph.com/">Fotogrph</a>. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
         </div>
-
+s
     </div>
+
+    @yield('mainMenu')
+
+
 </body>
 </html>

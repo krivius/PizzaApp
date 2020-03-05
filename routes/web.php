@@ -11,27 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 
 Route::get('/cart', function () {
     return view('cart');
 });
-
 /*
-Route::get('/posts/{post}', function ($post) {
-    $posts =[
-        "my-first-post" => "Hello, this im my first post!",
-        "my-second-post" => "Now I'm gettin` the hang of this blogging thing!"
-    ];
-
-    if(! array_key_exists($post, $posts)){
-        abort(404, 'Sorry, this page was not found.');
-    }
-    return view('posts', [
-        "post" => $posts[$post]
-    ]);
+Route::get('/test', function () {
+    $name = ["qwe"=>"rty", "foo"=>"bar"];
+    return view('test', $name);
 });*/
-Route::get('/posts/{post}', 'PostsController@show');
+
+
+
+Route::get('/special-offers', function () {
+    return view('special-offers');
+});
+
+Route::get('/', 'PizzaController@index'); //get a list of all the pizzas available in the menu
+
+Route::get('/pizza/{pizza}', 'PizzaController@show'); //get full description of a selected pizza
+
+Route::post('/test', 'TestController@test');
+
+

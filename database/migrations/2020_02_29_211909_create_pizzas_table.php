@@ -13,10 +13,11 @@ class CreatePizzaTable extends Migration
      */
     public function up()
     {
-        Schema::create('pizza', function (Blueprint $table) {
+        Schema::create('pizzas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description'); //what's on the pizza
+            $table->text('full_info'); //full description. TODO: replace "LOREM IPSUM"
             $table->bigInteger('type'); //hot / meat / vegan etc.
             $table->boolean('thickness'); //dough thickness
             $table->decimal('price', 8, 2);
@@ -35,6 +36,6 @@ class CreatePizzaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pizza');
+        Schema::dropIfExists('pizzas');
     }
 }

@@ -447,21 +447,42 @@ a:hover {
 #footer-content a {
 }
 
-#column1 {
+.pizzaColumn{
+    width: 280px;
+    height: 450px;
+    float: left;
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.fullImage{
+    margin: 50px;
+}
+.fullInfo{
+    display: inline-block;
+    float: right;
+    width: 550px;
+}
+
+
+/*
+#column1, #column4 {
 	float: left;
 	width: 290px;
 	margin-right: 30px;
 }
 
-#column2 {
+#column2, #column5 {
 	float: left;
 	width: 280px;
 }
 
-#column3 {
+#column3, #column6 {
 	float: right;
 	width: 260px;
 }
+*/
 
 /* Footer */
 
@@ -551,28 +572,15 @@ ul.style1 .first {
 	font-size: 30px;
 }
 
-#featured-content #column1 {
-	float: left;
-	width: 300px;
-	margin-right: 50px;
-}
 
-#featured-content #column2 {
-	float: left;
-	width: 300px;
-}
-
-#featured-content #column3 {
-	float: right;
-	width: 300px;
-}
 
 .button a {
 	display: block;
 	float: left;
-	width: 88px;
+	width: auto;
 	padding: 5px 5px;
 	margin-right: 10px;
+    margin-left: 20px;
 	background: #132434;
 	border-radius: 5px;
 	color: #FFFFFF;
@@ -581,7 +589,7 @@ ul.style1 .first {
 }
 
 
-.bounce { animation: bounce 1s; }
+.bounce:hover { animation: bounce 1s; }
 
 @keyframes bounce {
     0% { transform: rotate(  0deg) scale(1.0); }
