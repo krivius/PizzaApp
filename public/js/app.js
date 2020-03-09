@@ -65713,70 +65713,20 @@ var MainMenu = /*#__PURE__*/function (_Component) {
     };
     _this.cart = [];
     _this.addToCart = _this.addToCart.bind(_assertThisInitialized(_this));
-    _this.SendCartData = _this.SendCartData.bind(_assertThisInitialized(_this));
     return _this;
   }
-  /*
-      async SendCartData(data) {
-          const url = '/test';
-  
-          try {
-              const response = await fetch(url, {
-                  method: 'POST',
-                  body: data,
-                  headers: {
-                      'Content-Type': 'application/json'
-                  }
-              });
-             // window.location = '/cart';
-              console.log('Success:', response);
-  
-          } catch (error) {
-              console.error('Error:', error);
-          }
-      }*/
-
 
   _createClass(MainMenu, [{
-    key: "SendCartData",
-    value: function SendCartData(data) {
-      axios.post('/test', JSON.stringify(data)).then(function (response) {
-        console.log(response); // window.location='/cart';
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    }
-    /*  SendCartData(data){
-          const request = new XMLHttpRequest();
-          request.open('POST', '/test', true);
-          request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-          request.send(data);
-          console.log()
-      }*/
-
-    /*
-       SendCartData(data){
-           fetch('/test/', {
-               method: 'POST',
-               async: true,
-               headers: {
-                   Accept: 'application/json',
-                   'Content-Type': 'application/json',
-               },
-               body: data,
-           });
-       }*/
-
-  }, {
     key: "addToCart",
-    value: function addToCart(elem, price) {
+    value: function addToCart(elem, price, name) {
       var obj = {
         id: elem,
+        name: name,
         quant: 1,
         price_usd: price * 1,
         // use *1 to convert from string to number
         price_eur: (price * 0.9).toFixed(2) * 1
-      }; //check if already in cart and change quantity & priceif is
+      }; //check if already in cart and change quantity & price if is
 
       if (this.cart.findIndex(function (x) {
         return x.id === elem;
@@ -65825,16 +65775,12 @@ var MainMenu = /*#__PURE__*/function (_Component) {
         }, "Read more")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "button buy",
           onClick: function onClick() {
-            return _this2.addToCart(item.id, item.price);
+            return _this2.addToCart(item.id, item.price, item.name);
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "#"
         }, "Buy (", item.price, "$)")));
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick() {
-          return _this2.SendCartData(_this2.cart);
-        }
-      }, "test"));
+      }));
     }
   }]);
 

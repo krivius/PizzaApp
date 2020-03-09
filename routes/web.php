@@ -12,16 +12,8 @@
 */
 
 Route::get('/cart', 'cartController@index');
-/*Route::get('/cart', function () {
-    $cartData = request('cartData');
-    return view('cart', ['cartData' => $cartData]);
-});*/
-/*
-Route::get('/test', function () {
-    $name = ["qwe"=>"rty", "foo"=>"bar"];
-    return view('test', $name);
-});*/
 
+Route::post('/placeOrder', 'OrdersController@create');
 
 
 Route::get('/special-offers', function () {

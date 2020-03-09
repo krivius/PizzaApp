@@ -598,7 +598,7 @@ ul.style1 .first {
     100% { transform: rotate(  0deg) scale(1.0); }
 }
 
-#cartContents {
+/*#cartContents {
     list-style-type: none;
 }
 #cartContents li {
@@ -610,5 +610,21 @@ ul.style1 .first {
     margin: 10px auto;
     display: block;
     position: relative;
+}*/
+
+label{
+    width: 160px;
+    display: inline-block;
+    color: #4e79a0;
+}
+
+.badge{
+    float: right;
+    background-color: #4e79a0;
+    border-radius: 5px;
+    color: #fff;
+}
+#submitOrder{
+    background-color: #4e79a0;
 }
 
