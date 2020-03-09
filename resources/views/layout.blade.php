@@ -28,7 +28,7 @@
                     <ul>
                         <li class="{{ Request::path() === '/' ? 'current_page_item' : '' }} "><a href="/">Menu</a></li>
                         <li  class="{{ Request::path() === 'special-offers' ? 'current_page_item' : '' }} "><a href="/special-offers">Special offers</a></li>
-                        <li  class="{{ Request::path() === 'cart' ? 'current_page_item' : '' }} "><a href="/cart">Cart</a></li>
+                        <li  class="{{ Request::path() === 'cart' ? 'current_page_item' : '' }} "><a href="/cart" id="cartBtn">Cart</a></li>
                     </ul>
                 </div>
             </div>

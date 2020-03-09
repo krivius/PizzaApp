@@ -597,3 +597,18 @@ ul.style1 .first {
     67% { transform: rotate(-12deg) scale(0.8); }
     100% { transform: rotate(  0deg) scale(1.0); }
 }
+
+#cartContents {
+    list-style-type: none;
+}
+#cartContents li {
+    list-style-type: none;
+    border: 1px dashed #4e79a0;
+    padding: 10px;
+    border-radius: 10px;
+    width: 900px;
+    margin: 10px auto;
+    display: block;
+    position: relative;
+}
+

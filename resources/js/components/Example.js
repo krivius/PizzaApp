@@ -12,7 +12,7 @@ class MainMenu extends Component {
         this.SendCartData = this.SendCartData.bind(this);
     }
 
-
+/*
     async SendCartData(data) {
         const url = '/test';
 
@@ -24,14 +24,13 @@ class MainMenu extends Component {
                     'Content-Type': 'application/json'
                 }
             });
-            window.location = '/cart';
+           // window.location = '/cart';
             console.log('Success:', response);
 
         } catch (error) {
             console.error('Error:', error);
         }
-    }
-/*
+    }*/
     SendCartData(data){
         axios.post('/test', JSON.stringify(data))
             .then(function (response) {
@@ -42,7 +41,7 @@ class MainMenu extends Component {
             .catch(function (error) {
                 console.log(error);
             });
-    }*/
+    }
 
 
   /*  SendCartData(data){
@@ -76,12 +75,16 @@ class MainMenu extends Component {
         //check if already in cart and change quantity & priceif is
         if(this.cart.findIndex(x => x.id === elem) != -1){
             this.cart.find(x => x.id === elem).quant++;
-            this.cart.find(x => x.id === elem).price_usd = this.cart.find(x => x.id === elem).quant*price;
+            this.cart.find(x => x.id === elem).price_usd =
+                this.cart.find(x => x.id === elem).quant*price;
+            this.cart.find(x => x.id === elem).price_eur=
+                (this.cart.find(x => x.id === elem).quant*price*0.9).toFixed(2)*1;
         }else{ //add to cart if not
             this.cart.push(obj);
         }
         console.log(this.cart);
-
+        document.getElementById('cartBtn')
+            .setAttribute('href', '/cart?cartData='+JSON.stringify(this.cart));
     }
 
 
@@ -93,6 +96,9 @@ class MainMenu extends Component {
                 {this.pizzas.list.map(item => (
                     <div className="pizzaColumn" key={item.id}>
                         <h2>{item.name}</h2>
+                        <span>
+                             <img src={item.type === '2' ? '"/images/pepper.png"/>' : ''} />
+                        </span>
                         <p><img src={'/images/pizza/' + item.image_addr } width="200" height="200" alt=""/></p>
                         <p>{item.description}</p>
                         <span className="button"><a href={'/pizza/' + item.id }>Read more</a></span>

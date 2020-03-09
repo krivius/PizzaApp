@@ -18,13 +18,10 @@ class TestController extends Controller
     public function test(){
         $qwe = request()->all();
 //        dd($qwe);
+//        echo 'success';
 
-        Cookie::set('cartContents', $qwe);
+//        Cookie::set('cartContents', $qwe);
 
-//        return view('cart', [
-//            'req'=>$qwe
-//        ]);
-//        die(request()->all());
     }
 
 
