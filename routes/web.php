@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/cart', 'cartController@index');
-
-Route::post('/placeOrder', 'OrdersController@create');
-
+//Route::get('/cart', 'cartController@index');
+Route::post('/cart', 'cartController@index');
+Route::post('/placeOrder', 'OrdersController@store');
 
 Route::get('/special-offers', function () {
     return view('special-offers');

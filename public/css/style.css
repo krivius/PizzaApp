@@ -189,12 +189,12 @@ a:hover {
 	line-height: normal;
 }
 
-#menu li {
+#menu li, #menu input {
 	float: left;
 	padding: 0px 0px 0px 0px;
 }
 
-#menu a {
+#menu a, #menu input {
 	display: block;
 	margin-right: 1px;
 	padding: 10px 20px 10px 20px;
@@ -207,16 +207,44 @@ a:hover {
 	color: #12212F;
 	border: none;
 }
+#menu input{
+    background: none;
+}
+#menu input:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}
 
-#menu a:hover, #menu .current_page_item a {
+
+#menu a:hover, #menu .current_page_item a,
+#menu .current_page_item input{
 	text-decoration: none;
 	color: #FFFFFF;
 }
 
-#menu .current_page_item a {
+#menu .current_page_item a,
+#menu .current_page_item input{
 	background: #132434;
 	border-radius: 5px;
 }
+#menu form{
+    display: inline-block;
+    float: right;
+}
+.button.buy {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px auto;
+}
+.pizzaPrice{
+    position: absolute;
+    bottom: 0;
+    left:10px;
+    margin: 10px auto;
+    font-weight: bold;
+}
+
 
 /* Page */
 
@@ -447,13 +475,17 @@ a:hover {
 #footer-content a {
 }
 
-.pizzaColumn{
+.pizzaColumn {
     width: 280px;
     height: 450px;
     float: left;
     display: inline-block;
     margin: 20px;
     text-align: center;
+    position: relative;
+    border: 1px dashed #4e79a0;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .fullImage{
@@ -586,6 +618,7 @@ ul.style1 .first {
 	color: #FFFFFF;
 	text-align: center;
 	text-decoration: none;
+    width: 75px;
 }
 
 
@@ -626,5 +659,42 @@ label{
 }
 #submitOrder{
     background-color: #4e79a0;
+    text-transform: uppercase;
 }
 
+.order-item-info{
+    display: inline-block;
+    float: right;
+    height: 100%;
+    width: auto;
+}
+.quant-input{
+    width: 50px;
+    text-align: center;
+}
+.pizzaThumbnail{
+    display: inline-block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+.cartPrice{
+    display: inline-block;
+    float: left;
+    margin-right: 30px;
+    position: relative;
+    top: 5px;
+}
+.cartPizzaName{
+    display: inline-block;
+    margin-left: 30px;
+    position: relative;
+    top: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.history-group{
+
+    margin-bottom: 20px;
+}

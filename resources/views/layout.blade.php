@@ -26,11 +26,22 @@
                     <h1><a href="#"><img src="/images/PizzaExpressLogo.png"></a></h1>
                 </div>
                 <div id="menu">
-                    <ul>
-                        <li class="{{ Request::path() === '/' ? 'current_page_item' : '' }} "><a href="/">Menu</a></li>
-                        <li  class="{{ Request::path() === 'special-offers' ? 'current_page_item' : '' }} "><a href="/special-offers">Special offers</a></li>
-                        <li  class="{{ Request::path() === 'cart' ? 'current_page_item' : '' }} "><a href="/cart" id="cartBtn">Cart</a></li>
-                    </ul>
+                        <form action="/cart" method="POST">
+                            @CSRF
+                            <ul>
+                                <li class="{{ Request::path() === '/' ? 'current_page_item' : '' }} ">
+                                    <a href="/">Menu</a>
+                                </li>
+                                <li  class="{{ Request::path() === 'special-offers' ? 'current_page_item' : '' }} ">
+                                    <a href="/special-offers">Special offers</a>
+                                </li>
+                                <li  class="{{ Request::path() === 'cart' ? 'current_page_item' : '' }} ">
+                                    <input type="submit" id="cartBtn" value="CART">
+                                    <input type="hidden" name="cartData" id="cartContent"/>
+                                </li>
+                            </ul>
+                        </form>
+
                 </div>
             </div>
         </div>

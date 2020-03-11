@@ -7,13 +7,14 @@ class MainMenu extends Component {
         this.pizzas = {
             list: myData
         };
-        this.cart = [];
+        this.cart = document.getElementById('cartContent').value || [];
         this.addToCart = this.addToCart.bind(this);
     }
 
 
 
     addToCart(elem, price, name){
+
         let obj = {
             id:elem,
             name:name,
@@ -33,8 +34,11 @@ class MainMenu extends Component {
             this.cart.push(obj);
         }
         console.log(this.cart);
-        document.getElementById('cartBtn')
-            .setAttribute('href', '/cart?cartData='+JSON.stringify(this.cart));
+        // document.getElementById('cartBtn')
+        //     .setAttribute('href', '/cart?cartData='+JSON.stringify(this.cart));
+        document.getElementById('cartContent').setAttribute('value', JSON.stringify(this.cart));
+        document.getElementById('cartBtn').setAttribute('value', 'CART ('+this.cart.length+')');
+
     }
 
 
@@ -46,14 +50,16 @@ class MainMenu extends Component {
                 {this.pizzas.list.map(item => (
                     <div className="pizzaColumn" key={item.id}>
                         <h2>{item.name}</h2>
-                        <span>
-                             <img src={item.type === '2' ? '"/images/pepper.png"/>' : ''} />
-                        </span>
-                        <p><img src={'/images/pizza/' + item.image_addr } width="200" height="200" alt=""/></p>
+                        <p className="bounce">
+                            <img src={'/images/pizza/' + item.image_addr } width="200" height="200" alt=""/>
+                        </p>
                         <p>{item.description}</p>
-                        <span className="button"><a href={'/pizza/' + item.id }>Read more</a></span>
-                        <span className="button buy" onClick={ () => this.addToCart(item.id, item.price, item.name) }>
-                            <a href="#">Buy ({item.price}$)</a>
+                            <span className="pizzaPrice">
+                                {item.price}&#36;  /
+                                {(item.price*0.9).toFixed(2)}&#8364;
+                            </span>
+                            <span className="button buy" onClick={ () => this.addToCart(item.id, item.price, item.name) }>
+                            <a href="#">Buy</a>
                         </span>
                     </div>
                 ))}
